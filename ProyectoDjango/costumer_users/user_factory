@@ -1,0 +1,10 @@
+from .models import UserStandar , UserAdmin
+
+class UserFactory():
+    @staticmethod
+    def create_user(cls, tipo , nombre, apellido, email , password, dni , categoria):
+        if tipo == 'Admin':
+            return UserStandar(nombre, apellido, email , password, dni , categoria)
+        elif tipo == 'Standar':
+            return UserAdmin(nombre, apellido, email , password, dni , categoria)
+
